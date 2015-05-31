@@ -1,5 +1,5 @@
 {
-    "name": "matthiasmoritz/isbn",
+    "name": "matthiasmoritz/cake-isbn",
     "description": "Isbn plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
