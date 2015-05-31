@@ -3,7 +3,7 @@
     "description": "Isbn plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
-        "php": ">=5.4.16",
+        "php": ">=5.3.0",
         "cakephp/cakephp": "~3.0"
     },
     "autoload": {
