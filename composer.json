@@ -2,7 +2,7 @@
     "name": "matthiasmoritz/cake-isbn",
     "description": "Isbn plugin for CakePHP",
     "type": "cakephp-plugin",
-    "license": "MIT"
+    "license": "MIT",
     "authors": [
         {
             "name": "Matthias Moritz",
