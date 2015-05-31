@@ -14,12 +14,12 @@ composer require "matthiasmoritz/cake-isbn" "dev-master"
 
 Load the plugin in your config/bootstrap.php
 
-```
+```php
 Plugin::load('Isbn');
 ```
 
 In your controller
-```
+```php
 public function initialize(){
     $this->loadComponent('Isbn.Isbn');
 }
