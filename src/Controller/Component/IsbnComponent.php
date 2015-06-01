@@ -7,7 +7,7 @@ use Cake\Core\Plugin;
 
 
 /**
-* MarkdownHelper - a CakePHP helper to output Markdown
+* Cake-Isbnr - a CakePHP component to work with ISBN
 *
 * @package Isbn
 * @version Release: 1.0
