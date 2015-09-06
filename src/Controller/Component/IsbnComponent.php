@@ -7,7 +7,7 @@ use Cake\Core\Plugin;
 
 
 /**
-* Cake-Isbnr - a CakePHP component to work with ISBN
+* cake-isbn - a CakePHP component to work with ISBN
 *
 * @package Isbn
 * @version Release: 1.0

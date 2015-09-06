@@ -17,5 +17,10 @@
         "psr-4": {
             "Isbn\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Isbn\\Test\\": "./plugins/Isbn/tests"
+        }
     }
 }
