@@ -1,4 +1,5 @@
 # Isbn plugin for CakePHP
+This Plugin splits a valid ISBN-13 Number in its components (ean, group, publisher, title, checkdigit)
 
 ## Installation
 
