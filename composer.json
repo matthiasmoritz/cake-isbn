@@ -22,11 +22,6 @@
         "psr-4": {
             "Isbn\\Test\\": "./plugins/Isbn/tests"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.0-dev"
-        }
     }
 
 }
