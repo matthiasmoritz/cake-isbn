@@ -25,7 +25,7 @@ public function initialize(){
     $this->loadComponent('Isbn.Isbn');
 }
 
-$this->Isbn->validate($isbn);
+$this->Isbn->validateIsbn($isbn);
 
 $this->Isbn->splitIsbn($isbn);
 ```
