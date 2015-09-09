@@ -110,17 +110,8 @@ class IsbnComponent extends Component
     {
         $ean = strval($check);
         $code = substr($ean, 0, -1);
-        $key = 0;
-        $mult = array( 1, 3 );           
-        for ( $i = 0; $i < strlen( $code ); $i++ )
-        {            
-            $key += substr( $code, $i, 1 ) * $mult[$i % 2];
-        }
-        $key = 10 - ( $key % 10 );
-        if ( $key == 10 )
-        {
-            $key = 0;
-        }
+        $key = $this->calculateCheckdigit13($code);
+        
         // in key steht die prüfziffer - an den code anhängen
         $code .= $key;
         if ($code == $ean)
@@ -131,6 +122,53 @@ class IsbnComponent extends Component
             return false;
         }
     }
+    
+    private function calculateCheckdigit13($isbn12)
+	{
+		$key = 0;
+		$mult = array( 1, 3 );           
+		for ( $i = 0; $i < strlen( $isbn12 ); $i++ )
+		{            
+			$key += substr( $isbn12, $i, 1 ) * $mult[$i % 2];
+		}
+		$key = 10 - ( $key % 10 );
+		if ( $key == 10 )
+		{
+			$key = 0;
+		}
+		return $key;
+	}
+	
+	public function validateIsbn10($isbn10){
+		$isbn10 = strtoupper($isbn10);
+		$code = substr($isbn10, 0, -1);
+		$key = 0;
+		for ( $i = 0; $i < 9; $i++ ){
+			$key += substr ($code, $i, 1) * ($i+1);
+		}
+		$key = ($key % 11);
+		if ($key === 10){
+			$key = 'X';
+		}
+		$code .= $key;
+		if ($code == $isbn10)
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
+	}
+
+	public function translate10to13($isbn10)
+	{
+		if (!($this->validateIsbn10($isbn10))){
+			return false;
+		}
+		$isbn12 = '978'.substr($isbn10, 0, -1);
+		$isbn13 = $isbn12.$this->calculateCheckdigit13($isbn12);
+		return $isbn13;
+	}
 
 }
 
